@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgizdglC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQlu9" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div>
+            <button id="now" class="btn btn-primary btn-lg">now</button>
+            <button id="record" class="btn btn-success btn-lg">record</button>
+        </div>
+        <div>
+            <table border="1" class="table">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>date time</th>
+                        <th>temperature(*C)</th>
+                        <th>humidity(%)</th>
+                    </tr>
+                </thead>
+                <tbody id="table">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="https://ajax.googleais.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="static/index.js"></script>
+</body>
+</html>
