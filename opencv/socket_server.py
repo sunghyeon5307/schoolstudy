@@ -1,16 +1,25 @@
 # server code
 from socket import *
 
-host = '127.0.01'
-port=9999
+Host = '127.0.0.1'
+Port = 9999
 
-client_socket = socket(AF_INET, SOCK_STREAM)
+server_socket = socket(AF_INET,SOCK_STREAM)
+server_socket.setsockopt(SOL_SOCKET,SO_REUSEADDR,1)
+server_socket.bind((Host,Port))
 
-client_socket.connect((host, port))
-client_socket.sendall('안녕.'.encode())
+print("listening..")
+server_socket.listen()
 
-data=client_socket.recv(1024)
-print('received from', repr(data.decode()))
+client_socket, addr = server_socket.accept()
+print('Connected by',addr)
+
+while True:
+    data = client_socket.recv(1024)
+    if not data:
+        break
+    print("Received from",addr,data.decode())
+    client_socket.sendall(data)
 
 client_socket.close()
-
+server_socket.close()
