@@ -6,7 +6,7 @@ img = cv2.imread('/Users/bagseonghyeon/Desktop/schoolstudy/opencv/images/road.jp
 pts_src = []
 
 def mouse_callback(event, x, y, a, m):
-    global pts_src
+    global pts_src 
     if event == cv2.EVENT_LBUTTONDOWN:
         pts_src.append((x, y))
         print(f"Point {len(pts_src)}: ({x}, {y})")
